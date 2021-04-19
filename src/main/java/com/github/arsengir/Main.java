@@ -49,7 +49,13 @@ public class Main {
                     }
                 }
                 int steps = Integer.parseInt(inCmd);
-                FrogCommand cmd = FrogCommands.jumpRightCommand(frog, steps);
+                FrogCommand cmd;
+                if (steps > 0) {
+                    cmd = FrogCommands.jumpRightCommand(frog, steps);
+                } else {
+                    cmd = FrogCommands.jumpLeftCommand(frog, steps);
+                }
+
                 curCommand++;
                 commands.add(cmd);
                 cmd.todo();
